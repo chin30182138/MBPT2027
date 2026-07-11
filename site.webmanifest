@@ -1,0 +1,16 @@
+{
+  "name": "神獸人格學 MBPT",
+  "short_name": "MBPT",
+  "description": "探索你的神獸人格、互動節奏與關係能量。",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f6f2e9",
+  "theme_color": "#355248",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
