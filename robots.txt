@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mbpt-2027-ei7o.vercel.app/sitemap.xml
