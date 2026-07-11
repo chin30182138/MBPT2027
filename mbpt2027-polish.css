@@ -1,0 +1,232 @@
+.db-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.db-topnav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.db-topnav a,
+.back-link {
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.db-page-premium .back-link,
+.db-topnav a {
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(53, 44, 29, 0.08);
+  background: rgba(255, 249, 241, 0.94);
+}
+
+.db-status-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 18px 0;
+}
+
+.db-status-strip article {
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: rgba(255, 251, 245, 0.92);
+  box-shadow: var(--shadow);
+}
+
+.db-status-strip span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--accent-deep);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.db-status-strip strong {
+  display: block;
+  margin-bottom: 8px;
+  font-family: "Noto Serif TC", serif;
+  font-size: 1.25rem;
+}
+
+.db-status-strip p {
+  margin: 0;
+  line-height: 1.72;
+  color: var(--muted);
+}
+
+.db-layer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.db-layer-card {
+  background:
+    radial-gradient(circle at top left, rgba(210, 161, 91, 0.12), transparent 36%),
+    rgba(255, 249, 241, 0.96);
+}
+
+.db-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.db-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  color: #fff8f2;
+  background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.db-card-lead {
+  margin: 0 0 12px;
+  line-height: 1.76;
+  color: var(--muted);
+}
+
+.db-roadmap {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.db-roadmap article {
+  padding: 20px;
+  border: 1px solid rgba(53, 44, 29, 0.08);
+  border-radius: 22px;
+  background: rgba(255, 249, 241, 0.96);
+}
+
+.db-roadmap span {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  margin-bottom: 12px;
+  border-radius: 50%;
+  color: #fff8f2;
+  background: linear-gradient(135deg, var(--forest), var(--accent-deep));
+  font-weight: 800;
+}
+
+.db-roadmap strong {
+  display: block;
+  margin-bottom: 8px;
+  font-family: "Noto Serif TC", serif;
+  font-size: 1.08rem;
+}
+
+.db-roadmap p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.ops-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.28fr) minmax(280px, 0.82fr);
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.ops-hero-main,
+.ops-hero-side,
+.ops-checklist-card {
+  padding: 22px;
+  border: 1px solid rgba(53, 44, 29, 0.08);
+  border-radius: 24px;
+  background: rgba(255, 249, 241, 0.96);
+}
+
+.ops-hero-main {
+  background:
+    radial-gradient(circle at top left, rgba(210, 161, 91, 0.14), transparent 40%),
+    rgba(255, 249, 241, 0.96);
+}
+
+.ops-hero-main h3,
+.ops-hero-side strong,
+.ops-checklist-card h3 {
+  margin: 0 0 12px;
+  font-family: "Noto Serif TC", serif;
+}
+
+.ops-hero-main p,
+.ops-hero-side li,
+.ops-checklist li {
+  line-height: 1.72;
+}
+
+.ops-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.ops-chip-row span {
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(53, 44, 29, 0.08);
+  background: rgba(255, 253, 249, 0.98);
+  font-weight: 700;
+}
+
+.ops-bullet-list,
+.ops-checklist {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.ops-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.ops-kpi {
+  min-height: 170px;
+}
+
+.ops-stream-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+  gap: 18px;
+}
+
+.ops-stream {
+  margin-top: 0;
+}
+
+@media (max-width: 1180px) {
+  .db-status-strip,
+  .db-layer-grid,
+  .db-roadmap,
+  .ops-kpi-grid,
+  .ops-hero,
+  .ops-stream-grid {
+    grid-template-columns: 1fr;
+  }
+}
