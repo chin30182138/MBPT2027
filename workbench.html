@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#355248" />
+    <link rel="canonical" href="https://mbpt-2027-ei7o.vercel.app/workbench" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="site.webmanifest" />
+    <meta property="og:title" content="神獸人格學體驗中心 | MBPT 2027" />
+    <meta property="og:description" content="從情境輸入、雙方分析到故事解讀與結果報告，這是 MBPT 神獸人格學的完整體驗入口。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mbpt-2027-ei7o.vercel.app/workbench" />
+    <meta property="og:image" content="https://mbpt-2027-ei7o.vercel.app/og-cover.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="神獸人格學體驗中心 | MBPT 2027" />
+    <meta name="twitter:description" content="從情境輸入、雙方分析到故事解讀與結果報告，這是 MBPT 神獸人格學的完整體驗入口。" />
+    <meta name="twitter:image" content="https://mbpt-2027-ei7o.vercel.app/og-cover.svg" />
+    <title>神獸人格學體驗中心 | MBPT 2027</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="mbpt2027-polish.css" />
+    <link rel="stylesheet" href="mbpt2027-workbench-refine.css" />
+    <link rel="stylesheet" href="mbpt2027-story-icap.css" />
+    <style id="workbench-bg-fallback">
+      html {
+        background: #f2ecdf;
+      }
+
+      body {
+        min-height: 100vh;
+        position: relative;
+        background-color: #f6f2e9;
+        background-image:
+          radial-gradient(circle at 12% 12%, rgba(210, 161, 91, 0.26), transparent 0 24%),
+          radial-gradient(circle at 88% 8%, rgba(179, 95, 61, 0.18), transparent 0 22%),
+          radial-gradient(circle at 50% 100%, rgba(53, 82, 72, 0.08), transparent 0 28%),
+          linear-gradient(180deg, #f1e8d8 0%, #f8f2e7 46%, #fcf8f1 100%);
+        background-attachment: fixed;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        background:
+          linear-gradient(rgba(82, 61, 32, 0.035) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(82, 61, 32, 0.035) 1px, transparent 1px);
+        background-size: 30px 30px;
+        mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.24), transparent 82%);
+        z-index: 0;
+      }
+
+      .app-header,
+      .app-shell {
+        position: relative;
+        z-index: 1;
+      }
+    </style>
+    <script defer src="prototype-clean-data.js"></script>
+    <script defer src="prototype-shared.js"></script>
+    <script defer src="prototype.js"></script>
+  </head>
+  <body>
+    <header class="app-header" id="top">
+      <div class="topbar">
+        <a class="brand" href="index.html">神獸人格學 MBPT</a>
+        <nav class="top-nav" aria-label="主導覽">
+          <a href="#overview">導覽</a>
+          <a href="#case-entry">開始測驗</a>
+          <a href="#analysis">看分析</a>
+          <a href="#story-engine">故事解讀</a>
+          <a href="#icap">能力對位</a>
+          <a href="#report">結果報告</a>
+        </nav>
+      </div>
+
+      <section class="hero-card">
+        <div class="hero-copy">
+          <p class="eyebrow">MBPT 神獸人格體驗中心</p>
+          <h1>把人格分析真的做成一段一般人也走得完的網頁體驗。</h1>
+          <p class="lead">
+            你可以先輸入情境與雙方人格，再一路看到主分析、故事解讀、能力對位，最後帶走可閱讀、可列印、可分享的結果報告。
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#case-entry" data-panel-link="case-entry">開始測驗</a>
+            <a class="button secondary" href="#analysis" data-panel-link="analysis">先看分析會長怎樣</a>
+            <a class="button secondary" href="#report" data-panel-link="report">直接看結果報告</a>
+          </div>
+        </div>
+
+        <div class="hero-metrics">
+          <article>
+            <span>這一版定位</span>
+            <strong>公開體驗版</strong>
+            <p>不只是規格展示，而是讓使用者真的能完成一次人格體驗。</p>
+          </article>
+          <article>
+            <span>體驗重點</span>
+            <strong>流程要走得順</strong>
+            <p>先把輸入、理解、帶走結果這三件事做順，再繼續擴寫更深的模型內容。</p>
+          </article>
+          <article>
+            <span>最後會拿到</span>
+            <strong>分析 + 故事 + 建議</strong>
+            <p>讓結果不只是一個標籤，而是可應用在合作、關係與自我理解上的內容。</p>
+          </article>
+        </div>
+      </section>
+    </header>
+
+    <main class="app-shell">
+      <aside class="side-nav">
+        <section class="side-card side-card-strong">
+          <p class="side-label">使用說明</p>
+          <h2>MBPT 神獸人格體驗中心</h2>
+          <p>從案例輸入開始，一路走到正式報告，這一頁就是你的完整體驗線。</p>
+        </section>
+
+        <nav class="side-card side-menu" aria-label="工作台分頁">
+          <a href="#overview" data-panel-link="overview">01 先看導覽</a>
+          <a href="#case-entry" data-panel-link="case-entry">02 輸入情境</a>
+          <a href="#analysis-status" data-panel-link="analysis-status">03 分析進度</a>
+          <a href="#analysis" data-panel-link="analysis">04 主分析</a>
+          <a href="#story-engine" data-panel-link="story-engine">05 故事解讀</a>
+          <a href="#icap" data-panel-link="icap">06 能力對位</a>
+          <a href="#report" data-panel-link="report">07 結果報告</a>
+          <a href="#deliverables" data-panel-link="deliverables">08 你會拿到什麼</a>
+        </nav>
+      </aside>
+
+      <div class="workspace">
+        <section class="panel-section is-active" id="overview">
+          <div class="section-head">
+            <p class="eyebrow">流程導覽</p>
+            <h2>這一頁現在已經是一條可從頭走到尾的公開體驗流程。</h2>
+          </div>
+          <div class="ops-kpi-grid">
+            <article class="info-card ops-kpi">
+              <span>第一步</span>
+              <strong>建立情境</strong>
+              <p>先決定這次要看合作、關係、表達、銷售還是職涯情境。</p>
+            </article>
+            <article class="info-card ops-kpi">
+              <span>第二步</span>
+              <strong>讀懂互動</strong>
+              <p>系統會整理雙方類型、互動風險、身心提醒與分析依據。</p>
+            </article>
+            <article class="info-card ops-kpi">
+              <span>第三步</span>
+              <strong>翻成可理解內容</strong>
+              <p>把分析轉成故事解讀、能力對位與下一步建議。</p>
+            </article>
+            <article class="info-card ops-kpi">
+              <span>第四步</span>
+              <strong>帶走正式結果</strong>
+              <p>最後整理成可閱讀、可列印、可分享的結果報告。</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel-section" id="case-entry">
+          <div class="section-head split-head">
+            <div>
+              <p class="eyebrow">Case Entry</p>
+              <h2>先把情境放進來，系統才知道這次要替你解讀什麼。</h2>
+            </div>
+            <div class="scenario-tabs" aria-label="情境切換">
+              <button class="scenario-button is-active" type="button" data-scenario="partnership">合作夥伴</button>
+              <button class="scenario-button" type="button" data-scenario="expression">表達溝通</button>
+              <button class="scenario-button" type="button" data-scenario="relationship">關係互動</button>
+              <button class="scenario-button" type="button" data-scenario="sales">銷售應用</button>
+              <button class="scenario-button" type="button" data-scenario="career">職涯發展</button>
+            </div>
+          </div>
+
+          <div class="entry-layout">
+            <form class="case-form" id="prototype-form">
+              <div class="form-grid">
+                <label>
+                  <span>案例名稱</span>
+                  <input id="case-title" type="text" />
+                </label>
+                <label>
+                  <span>分析情境</span>
+                  <input id="case-type" type="text" readonly />
+                </label>
+              </div>
+
+              <div class="form-grid">
+                <label>
+                  <span>日期</span>
+                  <input id="case-date" type="date" />
+                </label>
+                <label>
+                  <span>時間</span>
+                  <input id="case-time" type="time" />
+                </label>
+              </div>
+
+              <div class="dual-grid">
+                <section class="party-card">
+                  <p class="card-tag">你</p>
+                  <h3>你的類型</h3>
+                  <label>
+                    <span>神獸</span>
+                    <select id="a-beast"></select>
+                  </label>
+                  <label>
+                    <span>地支</span>
+                    <select id="a-branch"></select>
+                  </label>
+                </section>
+
+                <section class="party-card">
+                  <p class="card-tag">對方</p>
+                  <h3>對方的類型</h3>
+                  <label>
+                    <span>神獸</span>
+                    <select id="b-beast"></select>
+                  </label>
+                  <label>
+                    <span>地支</span>
+                    <select id="b-branch"></select>
+                  </label>
+                </section>
+              </div>
+
+              <label>
+                <span>案例描述</span>
+                <textarea id="case-description" rows="4"></textarea>
+              </label>
+
+              <label>
+                <span>目前卡點</span>
+                <textarea id="case-context" rows="4"></textarea>
+              </label>
+
+              <div class="form-actions">
+                <button class="button primary" id="submit-prototype" type="submit">開始 MBPT 分析</button>
+                <button class="button secondary" type="button" data-panel-link="analysis">先看主分析區</button>
+                <button class="button secondary" type="button" data-panel-link="report">直接看結果報告</button>
+                <button class="button secondary" id="reset-prototype" type="button">重設這次體驗</button>
+              </div>
+            </form>
+
+            <aside class="preview-card">
+              <p class="side-label">即時預覽</p>
+              <h3 id="summary-case-title">尚未建立案例</h3>
+              <p id="summary-line">先輸入情境、雙方人格與目前卡點，右側會同步整理案例摘要。</p>
+              <dl class="summary-list">
+                <div>
+                  <dt>你的類型</dt>
+                  <dd id="summary-main">待選擇</dd>
+                </div>
+                <div>
+                  <dt>對方類型</dt>
+                  <dd id="summary-secondary">待選擇</dd>
+                </div>
+                <div>
+                  <dt>互動焦點</dt>
+                  <dd id="summary-risk">尚未分析</dd>
+                </div>
+                <div>
+                  <dt>案例情境</dt>
+                  <dd id="summary-case-type">未指定</dd>
+                </div>
+              </dl>
+            </aside>
+          </div>
+        </section>
+
+        <section class="panel-section" id="analysis-status">
+          <div class="section-head">
+            <p class="eyebrow">Analysis Status</p>
+            <h2>這裡會告訴你，現在是不是已經可以往下讀完整結果。</h2>
+          </div>
+          <div class="ops-status-board">
+            <article class="status-card ops-status-main" id="analysis-status-card">
+              <div class="ops-status-head">
+                <div>
+                  <p class="card-tag">目前進度</p>
+                  <h3 id="analysis-status-title">等待建立案例</h3>
+                </div>
+                <span class="ops-status-badge">可開始閱讀</span>
+              </div>
+              <p id="analysis-status-text">完成情境輸入後，系統會依雙方人格與當前問題，整理出分析、故事解讀與結果報告。</p>
+              <div class="flow-chain">
+                <span id="step-structure">建立案例</span>
+                <span id="step-mapping">生成分析</span>
+                <span id="step-report">輸出報告</span>
+              </div>
+            </article>
+
+            <article class="status-card accent-card ops-status-side" id="completion-card">
+              <p class="card-tag">閱讀提示</p>
+              <h3 id="completion-title">現在還在建立案例階段</h3>
+              <p id="completion-text">你現在看到的是即時預覽；按下開始分析後，系統就會把這次的結果完整整理出來。</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel-section" id="analysis">
+          <div class="section-head">
+            <p class="eyebrow">主分析</p>
+            <h2>主分析會先指出雙方人格節奏與這次最值得優先處理的互動焦點。</h2>
+          </div>
+          <div class="report-console">
+            <article class="report-sheet report-sheet-premium">
+              <header class="report-header">
+                <div>
+                  <p class="card-tag">人格對照</p>
+                  <h3>主方與對方的人格對照</h3>
+                </div>
+              </header>
+              <div class="ops-kpi-grid">
+                <article class="info-card ops-kpi">
+                  <span>你的類型</span>
+                  <strong id="report-main-code">尚未建立</strong>
+                  <p id="beast-branch-copy">尚未建立</p>
+                </article>
+                <article class="info-card ops-kpi">
+                  <span>對方類型</span>
+                  <strong id="report-secondary-code">尚未建立</strong>
+                  <p id="counterpart-copy">尚未建立</p>
+                </article>
+                <article class="info-card ops-kpi">
+                  <span>互動風險</span>
+                  <strong id="interaction-risk-title">尚未建立</strong>
+                  <p id="interaction-risk-copy">尚未建立</p>
+                </article>
+                <article class="info-card ops-kpi">
+                  <span>身心提醒</span>
+                  <strong id="body-state-title">尚未建立</strong>
+                  <p id="body-state-summary">尚未建立</p>
+                </article>
+              </div>
+
+              <div class="analysis-grid-wide">
+                <article class="body-card">
+                  <h4>風險提醒</h4>
+                  <p id="body-state-risk">尚未建立</p>
+                </article>
+                <article class="body-card">
+                  <h4>照顧建議</h4>
+                  <p id="body-state-advice">尚未建立</p>
+                </article>
+              </div>
+
+              <div class="analysis-grid-wide">
+                <article class="story-card">
+                  <h4>五軸雷達</h4>
+                  <div class="radar-frame">
+                    <svg class="radar-svg" viewBox="0 0 240 240" aria-label="人格雷達圖">
+                      <polygon class="radar-ring" points="120,24 210,88 176,198 64,198 30,88"></polygon>
+                      <line class="radar-axis" x1="120" y1="120" x2="120" y2="24"></line>
+                      <line class="radar-axis" x1="120" y1="120" x2="210" y2="88"></line>
+                      <line class="radar-axis" x1="120" y1="120" x2="176" y2="198"></line>
+                      <line class="radar-axis" x1="120" y1="120" x2="64" y2="198"></line>
+                      <line class="radar-axis" x1="120" y1="120" x2="30" y2="88"></line>
+
+                      <text class="radar-label" x="120" y="14">溝通表達</text>
+                      <text class="radar-label" x="223" y="84">行動推進</text>
+                      <text class="radar-label" x="188" y="216">承壓恢復</text>
+                      <text class="radar-label" x="52" y="216">協作整合</text>
+                      <text class="radar-label" x="17" y="84">洞察理解</text>
+
+                      <polygon id="radar-a" class="radar-shape-a" points="120,120 120,120 120,120 120,120 120,120"></polygon>
+                      <polygon id="radar-b" class="radar-shape-b" points="120,120 120,120 120,120 120,120 120,120"></polygon>
+                    </svg>
+                  </div>
+                  <div class="radar-legend" aria-label="雷達圖圖例">
+                    <span><i class="legend-dot legend-a"></i>你的節奏</span>
+                    <span><i class="legend-dot legend-b"></i>對方節奏</span>
+                  </div>
+                  <p>雷達圖看的不是高低好壞，而是你和對方在五個面向上的節奏差異。</p><div class="radar-reading"><p id="radar-main-axis">你的主要優勢軸會顯示在這裡。</p><p id="radar-other-axis">對方目前最突出的節奏會顯示在這裡。</p><p id="radar-gap-axis">兩邊差距最大的面向會顯示在這裡，幫你快速抓到互動卡點。</p></div>
+                </article>
+                <article class="story-card">
+                  <h4>主要依據</h4>
+                  <ul class="evidence-list" id="evidence-list"></ul>
+                </article>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel-section" id="story-engine">
+          <div class="section-head">
+            <p class="eyebrow">故事解讀</p>
+            <h2>把分析結果翻成對方更容易聽得懂、接得住的故事節奏。</h2>
+          </div>
+          <div class="analysis-grid-wide">
+            <article class="story-card">
+              <h3 id="story-role">尚未建立</h3>
+              <p id="story-title">尚未建立</p>
+              <p id="story-opening">尚未建立</p>
+            </article>
+            <article class="story-card">
+              <h4>角色感</h4>
+              <p id="story-identity">尚未建立</p>
+              <h4>橋接方式</h4>
+              <p id="story-bridge">尚未建立</p>
+              <h4>可直接套用</h4>
+              <p id="story-template">尚未建立</p>
+              <h4>下一步</h4>
+              <p id="story-action">尚未建立</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel-section" id="icap">
+          <div class="section-head">
+            <p class="eyebrow">能力對位</p>
+            <h2>把這次最值得放大的能力軸，翻成你真的可以拿去用的方式。</h2>
+          </div>
+          <div class="ops-kpi-grid">
+            <article class="info-card ops-kpi">
+              <span>能力名稱</span>
+              <strong id="icap-name">尚未建立</strong>
+              <p id="icap-bridge">尚未建立</p>
+            </article>
+            <article class="info-card ops-kpi">
+              <span>角色定位</span>
+              <strong id="icap-role">尚未建立</strong>
+              <p id="icap-role-copy">尚未建立</p>
+            </article>
+            <article class="info-card ops-kpi">
+              <span>應用建議</span>
+              <strong>下一步怎麼做</strong>
+              <p id="icap-action">尚未建立</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel-section" id="report">
+          <div class="section-head split-head">
+            <div>
+              <p class="eyebrow">結果報告</p>
+              <h2>把分析內容整理成一份你看得懂、也帶得走的結果報告。</h2>
+            </div>
+            <div class="report-mode-switch" aria-label="報告模式">
+              <button class="mode-button is-active" type="button" data-report-mode="experience">體驗版</button>
+              <button class="mode-button" type="button" data-report-mode="teaching">教學版</button>
+              <button class="mode-button" type="button" data-report-mode="consulting">顧問版</button>
+            </div>
+          </div>
+
+          <div class="report-console">
+            <article class="report-sheet report-sheet-premium" id="report-sheet">
+              <header class="report-header">
+                <div>
+                  <p class="card-tag">MBPT 結果報告</p>
+                  <h3 id="report-title">MBPT 分析報告</h3>
+                  <p id="report-case-meta">建立案例後，這裡會顯示時間、情境與報告模式。</p>
+                </div>
+                <div class="print-actions">
+                  <button class="button secondary" id="copy-report" type="button">複製摘要</button>
+                  <button class="button secondary" type="button" onclick="window.MBPTPrintPage && window.MBPTPrintPage('report')">列印報告</button>
+                  <button class="button secondary" type="button" onclick="window.MBPTPrintPage && window.MBPTPrintPage('report')">另存 PDF</button>
+                </div>
+              </header>
+
+              <section class="report-guide" aria-label="結果導讀"><article><span>先看</span><strong>互動焦點</strong><p>先理解這次最容易卡住的是什麼，才知道後面建議為什麼這樣排。</p></article><article><span>再看</span><strong>雙方節奏</strong><p>把你和對方的強弱軸看懂，會比較知道彼此不是誰對誰錯，而是節奏不同。</p></article><article><span>最後看</span><strong>下一步建議</strong><p>把故事解讀、能力對位和下一步合在一起看，結果才會真的變成可用的行動。</p></article></section><section class="report-spotlight">
+                <div class="report-spotlight-copy">
+                  <p class="card-tag">本次焦點</p>
+                  <h4 id="report-highlight">完成分析後，這裡會先告訴你這次最值得先看見的地方。</h4>
+                  <p id="report-mode-note">你可以切換不同報告語氣，但分析核心會保持一致。</p>
+                </div>
+                <div class="report-spotlight-meta">
+                  <div>
+                    <span>互動組合</span>
+                    <strong id="report-duo">尚未建立</strong>
+                  </div>
+                  <div>
+                    <span>分享摘要</span>
+                    <p id="report-share-status">完成分析後，可以一鍵複製這次的結果摘要。</p>
+                  </div>
+                </div>
+              </section>
+
+              <div class="report-body">
+                <section>
+                  <h4>整體摘要</h4>
+                  <p id="report-summary">尚未建立</p>
+                </section>
+                <section>
+                  <h4>這次最值得先看見的地方</h4>
+                  <p id="report-match">尚未建立</p>
+                </section>
+                <section>
+                  <h4>互動提醒</h4>
+                  <p id="report-interaction">尚未建立</p>
+                </section>
+                <section>
+                  <h4>故事解讀</h4>
+                  <p id="report-story">尚未建立</p>
+                </section>
+                <section>
+                  <h4>能力對位</h4>
+                  <p id="report-icap">尚未建立</p>
+                </section>
+                <section>
+                  <h4>下一步建議</h4>
+                  <p id="report-next">尚未建立</p>
+                </section>
+                <section>
+                  <h4>照顧自己的提醒</h4>
+                  <p id="report-care">尚未建立</p>
+                </section>
+              </div>
+            </article>
+
+            <aside class="report-ops-card">
+              <p class="card-tag">報告使用方式</p>
+              <h3>這一區已經接近正式上線版本，會把閱讀、分享與輸出整合在一起。</h3>
+              <ul class="ops-checklist">
+                <li>先看上方的互動焦點，抓住這次最重要的核心。</li>
+                <li>再往下看雙方節奏、故事解讀和能力對位，理解原因。</li>
+                <li>最後決定要直接閱讀、複製摘要，還是列印成正式報告。</li>
+              </ul>
+              <div class="report-share-box">
+                <span>可分享短摘要</span>
+                <p id="report-share-preview">分析完成後，這裡會自動整理成一段適合傳給朋友或個案的短摘要。</p>
+              </div>
+              <div class="report-ops-tags">
+                <span>體驗版語氣</span>
+                <span>可列印</span>
+                <span>可另存 PDF</span>
+                <span>可複製摘要</span>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="panel-section" id="deliverables">
+          <div class="section-head">
+            <p class="eyebrow">交付內容</p>
+            <h2>你現在可以從這套體驗裡實際拿到什麼。</h2>
+          </div>
+          <div class="deliverable-stage">
+            <article class="deliverable-stage-main">
+              <p class="card-tag">目前成果</p>
+              <h3>你現在拿到的，已經不是展示頁，而是一條一般使用者可以自己走完的測驗與報告流程。</h3>
+              <p>
+                使用者可以從首頁進入、建立案例、查看雙方分析、讀懂故事解讀與能力建議，最後帶走一份可閱讀、可列印、可分享的結果報告。
+                這一版已經具備對外展示與內部試跑的基本完成度，接下來重點會放在內容擴充、細部 QA 與正式上架前整理。
+              </p>
+            </article>
+
+            <div class="deliverable-grid">
+              <article class="info-card deliverable-card">
+                <span>你先會得到</span>
+                <strong>情境案例</strong>
+                <p>可以用情境模板快速建立案例，並放入雙方神獸與地支組合。</p>
+              </article>
+              <article class="info-card deliverable-card">
+                <span>接著會看到</span>
+                <strong>人格 + 風險 + 故事</strong>
+                <p>可以直接看到主分析、互動風險、故事模式與能力橋接。</p>
+              </article>
+              <article class="info-card deliverable-card">
+                <span>最後可帶走</span>
+                <strong>報告 / 列印 / 摘要分享</strong>
+                <p>結果頁已具備正式閱讀、列印輸出與一鍵複製摘要，能更接近真實使用情境。</p>
+              </article>
+              <article class="info-card deliverable-card">
+                <span>接下來主重點</span>
+                <strong>QA 與擴充內容</strong>
+                <p>後續優先補一致性校對、更多案例內容，以及更完整的正式報告版本。</p>
+              </article>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <aside class="right-rail">
+        <section class="side-card">
+          <p class="side-label">即時狀態</p>
+          <div class="rail-metric">
+            <span>流程狀態</span>
+            <strong id="rail-status">等待建立</strong>
+          </div>
+          <div class="rail-metric">
+            <span>主方類型</span>
+            <strong id="rail-main">尚未建立</strong>
+          </div>
+          <div class="rail-metric">
+            <span>故事模式</span>
+            <strong id="rail-story">尚未建立</strong>
+          </div>
+          <div class="rail-metric">
+            <span>身心提醒</span>
+            <strong id="rail-body">尚未建立</strong>
+          </div>
+        </section>
+
+        <section class="side-card">
+          <p class="side-label">立即操作</p>
+          <button class="button primary block-button" type="button" data-panel-link="case-entry">回到案例輸入</button>
+          <button class="button secondary block-button" type="button" data-panel-link="analysis">先看分析會長怎樣</button>
+          <button class="button secondary block-button" type="button" data-panel-link="report">直接看結果報告</button>
+          <button class="button secondary block-button" id="copy-report-rail" type="button">複製結果摘要</button>
+          <button class="button secondary block-button" type="button" onclick="window.MBPTPrintPage && window.MBPTPrintPage('report')">列印正式報告</button>
+        </section>
+
+        <section class="side-card">
+          <p class="side-label">閱讀提醒</p>
+          <ul class="tips-list">
+            <li>首頁現在已經是大眾入口，這一頁則是實際體驗中心。</li>
+            <li>先把流程走順，比一次塞進太多深層規格更重要。</li>
+            <li>故事解讀與能力對位，是結果真正變得好懂的關鍵。</li>
+          </ul>
+        </section>
+      </aside>
+    </main>
+  </body>
+</html>
