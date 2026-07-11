@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="MBPT 神獸人格學分享圖">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f5ecdf" />
+      <stop offset="50%" stop-color="#fff8f1" />
+      <stop offset="100%" stop-color="#f0e1d5" />
+    </linearGradient>
+    <linearGradient id="orb" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#355248" />
+      <stop offset="100%" stop-color="#b35f3d" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <circle cx="945" cy="150" r="118" fill="#d2a15b" opacity="0.18" />
+  <circle cx="1020" cy="505" r="150" fill="#355248" opacity="0.1" />
+  <circle cx="185" cy="510" r="170" fill="#b35f3d" opacity="0.08" />
+  <rect x="70" y="70" width="1060" height="490" rx="38" fill="#fffaf4" opacity="0.88" stroke="#e7d8c6" />
+  <circle cx="185" cy="165" r="58" fill="url(#orb)" />
+  <text x="185" y="183" text-anchor="middle" font-size="42" font-family="Outfit, Arial, sans-serif" font-weight="800" fill="#fffaf4">MB</text>
+  <text x="275" y="165" font-size="56" font-family="Noto Serif TC, serif" font-weight="800" fill="#243a33">神獸人格學</text>
+  <text x="275" y="218" font-size="28" font-family="Outfit, Arial, sans-serif" font-weight="600" fill="#7b3e29">MYTHICAL BEAST PERSONALITY</text>
+  <text x="110" y="330" font-size="72" font-family="Noto Serif TC, serif" font-weight="900" fill="#23343b">找到最像你的神獸人格</text>
+  <text x="110" y="405" font-size="34" font-family="Noto Serif TC, serif" font-weight="700" fill="#6b6258">讀懂你的節奏、關係與天賦能量</text>
+  <text x="110" y="484" font-size="26" font-family="Outfit, Arial, sans-serif" font-weight="500" fill="#5f5a53">可體驗版首頁、互動分析、故事解讀、能力對位與結果報告</text>
+</svg>
