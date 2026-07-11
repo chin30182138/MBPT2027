@@ -1,0 +1,55 @@
+.story-console {
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(280px, 0.82fr);
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.story-hero-card,
+.story-ops-card,
+.icap-hero-card {
+  padding: 22px;
+  border: 1px solid rgba(53, 44, 29, 0.08);
+  border-radius: 24px;
+}
+
+.story-hero-card {
+  background:
+    radial-gradient(circle at top left, rgba(210, 161, 91, 0.14), transparent 38%),
+    rgba(255, 249, 241, 0.96);
+}
+
+.story-grid-premium {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.story-card-wide {
+  grid-column: 1 / -1;
+}
+
+.icap-console {
+  display: grid;
+  gap: 18px;
+}
+
+.icap-hero-card {
+  background:
+    radial-gradient(circle at top left, rgba(210, 161, 91, 0.14), transparent 38%),
+    rgba(255, 249, 241, 0.96);
+}
+
+.icap-grid-premium {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.icap-card {
+  min-height: 170px;
+}
+
+@media (max-width: 1180px) {
+  .story-console,
+  .story-grid-premium,
+  .icap-grid-premium {
+    grid-template-columns: 1fr;
+  }
+}
